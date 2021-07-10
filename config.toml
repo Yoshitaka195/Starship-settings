@@ -1,0 +1,53 @@
+# シェルプロンプトの間に空行を追加します
+add_newline = true
+
+# "❯" 記号を "➜" 記号に置き換えます
+[character]                            # 設定しようとしているモジュールの名前は "character" です。
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "        # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
+vicmd_symbol = "[V](bold green) "
+
+# packageモジュールを無効にし、プロンプトから完全に隠します
+[package]
+disabled = true
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]  # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+threshold = 50
+style = "bold yellow"
+discharging_symbol = "💦 "
+
+[[battery.display]]  # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+threshold = 100
+style = "bold green"
+
+[directory]
+truncation_length = 10
+truncation_to_repo = true
+style="fg:purple"
+
+[git_branch]
+symbol = "🐈 "
+truncation_length = 10
+truncation_symbol = ""
+style="fg:purple"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "❔未追跡ファイル数${count}‍"
+stashed = "📦"
+modified = "📝修正ファイル数${count}‍"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
