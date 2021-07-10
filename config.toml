@@ -1,16 +1,16 @@
-# シェルプロンプトの間に空行を追加します
+# シェルプロンプトの間に空行を追加
 add_newline = true
 
-# "❯" 記号を "➜" 記号に置き換えます
-[character]                            # 設定しようとしているモジュールの名前は "character" です。
+# シェルプロンプト上でのコマンド成功時、失敗時の表示設定
+[character]
 success_symbol = "[➜](bold green) "
-error_symbol = "[✗](bold red) "        # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
-vicmd_symbol = "[V](bold green) "
+error_symbol = "[✗](bold red) "
 
-# packageモジュールを無効にし、プロンプトから完全に隠します
+# packageモジュールを無効にし、プロンプトから完全に隠す
 [package]
 disabled = true
 
+# ユーザー名を表示設定
 [username]
 style_user = "white bold"
 style_root = "black bold"
@@ -18,35 +18,40 @@ format = "user: 🎻[$user]($style)"
 disabled = false
 show_always = true
 
+# バッテリーの状態ステータスを特定の%毎に表示設定
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
+discharging_symbol = "🔌 "
 
-[[battery.display]]  # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+[[battery.display]]
 threshold = 10
 style = "bold red"
+discharging_symbol = "💀 "
 
-[[battery.display]]  # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+[[battery.display]]
 threshold = 50
 style = "bold yellow"
 discharging_symbol = "💦 "
 
-[[battery.display]]  # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+[[battery.display]]
 threshold = 100
 style = "bold green"
 
+# directoryの表示スタイルを設定
 [directory]
 truncation_length = 10
 truncation_to_repo = true
 style="fg:purple"
 
+# 現在のディレクトリにあるアクティブなブランチを表示設定
 [git_branch]
 symbol = "🐈 "
 truncation_length = 10
 truncation_symbol = ""
 style="fg:purple"
 
+# gitのステータスを表示設定
 [git_status]
 conflicted = '[🏳\($count\)](red)'
 ahead = '[🏎\($count\)](white)'
@@ -59,8 +64,9 @@ staged = '[✅\($count\)](green)'
 renamed = '[👅\($count\)](white)'
 deleted = '[🗑\($count\)](white)'
 
+# 現在時刻を表示設定
 [time]
 disabled = false
 format = '[$time](bold white) '
 time_format = "%T"
-utc_time_offset = "9"
+utc_time_offset = "+9"
