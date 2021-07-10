@@ -11,6 +11,13 @@ vicmd_symbol = "[V](bold green) "
 [package]
 disabled = true
 
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "user: 🎻[$user]($style)"
+disabled = false
+show_always = true
+
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
@@ -41,13 +48,19 @@ truncation_symbol = ""
 style="fg:purple"
 
 [git_status]
-conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
-untracked = "❔未追跡ファイル数${count}‍"
-stashed = "📦"
-modified = "📝修正ファイル数${count}‍"
-staged = '[++\($count\)](green)'
-renamed = "👅"
-deleted = "🗑"
+conflicted = '[🏳\($count\)](red)'
+ahead = '[🏎\($count\)](white)'
+behind = '[😰\($count\)](white)'
+diverged = '[😵\($count\)](white)'
+untracked = '[❔\($count\)](white)'
+stashed = '[📦\($count\)](white)'
+modified = '[📝\($count\)](white)'
+staged = '[✅\($count\)](green)'
+renamed = '[👅\($count\)](white)'
+deleted = '[🗑\($count\)](white)'
+
+[time]
+disabled = false
+format = '[$time](bold white) '
+time_format = "%T"
+utc_time_offset = "9"
