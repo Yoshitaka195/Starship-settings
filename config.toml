@@ -10,7 +10,7 @@ error_symbol = "[✗](bold red) "
 [package]
 disabled = true
 
-# ユーザー名を表示設定
+# ユーザー名の表示設定
 [username]
 style_user = "white bold"
 style_root = "black bold"
@@ -18,7 +18,7 @@ format = "user: 🎻[$user]($style)"
 disabled = false
 show_always = true
 
-# バッテリーの状態ステータスを特定の%毎に表示設定
+# バッテリーのステータスを%毎に表示設定
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
@@ -38,13 +38,13 @@ discharging_symbol = "💦 "
 threshold = 100
 style = "bold green"
 
-# directoryの表示スタイルを設定
+# directoryの表示設定
 [directory]
 truncation_length = 10
 truncation_to_repo = true
 style="fg:purple"
 
-# 現在のディレクトリにあるアクティブなブランチを表示設定
+# 現在のディレクトリ内でアクティブなブランチを表示設定
 [git_branch]
 symbol = "🐈 "
 truncation_length = 10
